@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hanzzel Store · NCT</title>
+  <style>
+    :root { --max: 1100px; }
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;margin:0;line-height:1.45;color:#111;background:#f7f7f8}
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb}
+    .wrap{max-width:var(--max);margin:0 auto;padding:12px 16px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand h1{font-size:18px;margin:0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+    .card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+    .card img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#eee}
+    .card .in{padding:12px}
+    .title{font-weight:600;margin:0 0 6px}
+    .price{font-weight:700;margin:6px 0}
+    .btn{appearance:none;border:0;border-radius:999px;padding:10px 14px;background:#111;color:#fff;font-weight:600;cursor:pointer}
+    .btn[disabled]{opacity:.6;cursor:not-allowed}
+    .pill{display:inline-flex;gap:6px;align-items:center;font-size:12px;background:#f1f5f9;border:1px solid #e2e8f0;color:#0f172a;padding:4px 8px;border-radius:999px}
+    .topbar{display:flex;justify-content:space-between;align-items:center}
+    .search{width:100%;max-width:420px;display:flex;gap:8px}
+    .search input{flex:1;padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px}
+    footer{margin-top:40px;padding:24px 0;color:#555}
+    .muted{color:#6b7280;font-size:14px}
+    .badges{display:flex;gap:8px;flex-wrap:wrap}
+    .notice{background:#ecfeff;border:1px solid #a5f3fc;color:#155e75;padding:10px 12px;border-radius:10px;margin:12px 0}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <div class="brand">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.77 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        <h1>Hanzzel Store</h1>
+      </div>
+      <div class="badges">
+        <span class="pill">100% estático · GitHub Pages</span>
+        <span class="pill">Pagos externos seguros</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="notice">
+      Esta tienda funciona sin backend ni hosting pago: se despliega desde un repositorio en GitHub Pages. Los cobros se realizan mediante enlaces de pago (ej.: Mercado Pago, Stripe Payment Links, Lemon Squeezy, Gumroad). No se almacenan tarjetas en este sitio.
+    </div>
+
+    <div class="search">
+      <input id="q" placeholder="Buscar productos (p.ej. \"ebook\", \"servicio\")" />
+      <button class="btn" id="clearBtn">Limpiar</button>
+    </div>
+
+    <section style="margin-top:16px">
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section style="margin-top:28px">
+      <h3>¿Cómo se procesa el pago?</h3>
+      <p class="muted">Cada botón <strong>Comprar</strong> abre una URL de cobro externa (ej.: <em>Mercado Pago</em> en ARS o <em>Stripe</em> en USD). Puedes crear un enlace por producto y pegarlo en el catálogo (abajo).</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="muted">© <span id="year"></span> Hanzzel Corp — Sitio estático. Código en GitHub.</div>
+    </div>
+  </footer>
+
+  <script>
+    // 1) Catálogo: edita/duplica los items y pega tus enlaces de pago.
+    //    - mp_link: usa enlaces de pago de Mercado Pago (ej.: https://mpago.li/abcdef)
+    //    - stripe_link: usa Stripe Payment Links (ej.: https://buy.stripe.com/xyz)
+    //    - gumroad/lemon: también sirve un link directo al producto.
+    //    - Si defines varias opciones, se prioriza mp_link, luego stripe_link, luego generic_link.
+
+    const PRODUCTS = [
+      {
+        id: "ebook-nct",
+        title: "Ebook NCT — Cap. 1-8 (PDF)",
+        desc: "Marco matemático NCT: fundamentos, ejemplos y casos de uso.",
+        img: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop",
+        price: 12.99,
+        currency: "USD",
+        mp_link: "", // Pega aquí tu link de Mercado Pago si cobras en ARS
+        stripe_link: "https://buy.stripe.com/test_123456", // Ejemplo
+        generic_link: "" // Gumroad/Lemon/PayPal.Me, etc.
+      },
+      {
+        id: "servicio-consultoria",
+        title: "Consultoría 1h — NCT/IA",
+        desc: "Sesión privada de 60 minutos vía Meet/Telegram. Coordinamos por email.",
+        img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop",
+        price: 45,
+        currency: "USD",
+        mp_link: "",
+        stripe_link: "https://buy.stripe.com/test_654321",
+        generic_link: ""
+      },
+      {
+        id: "merch-campera",
+        title: "Campera Hanzzel · edición limitada",
+        desc: "Diseño minimalista, logo NCT. Entrega en 7-10 días hábiles.",
+        img: "https://images.unsplash.com/photo-1548883354-7622d3d4cc5a?q=80&w=1200&auto=format&fit=crop",
+        price: 79,
+        currency: "USD",
+        mp_link: "",
+        stripe_link: "",
+        generic_link: "https://example.com/pago-campera" // reemplaza por tu pasarela
+      }
+    ];
+
+    // 2) Renderizado simple + búsqueda
+    const grid = document.getElementById('grid');
+    const q = document.getElementById('q');
+    const clearBtn = document.getElementById('clearBtn');
+
+    function preferredLink(p){
+      return p.mp_link || p.stripe_link || p.generic_link || null;
+    }
+
+    function money(n, c){
+      try{
+        return new Intl.NumberFormat('es-AR', { style:'currency', currency: c || 'USD' }).format(n);
+      }catch{ return (c||'USD')+" "+n }
+    }
+
+    function card(p){
+      const link = preferredLink(p);
+      const disabled = !link;
+      return `<article class="card" data-title="${p.title.toLowerCase()}" data-desc="${p.desc.toLowerCase()}">
+        <img src="${p.img}" alt="${p.title}" loading="lazy">
+        <div class="in">
+          <h3 class="title">${p.title}</h3>
+          <p class="muted">${p.desc}</p>
+          <div class="price">${money(p.price, p.currency)}</div>
+          <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+            <a class="btn" ${disabled?"aria-disabled=\"true\" style=\"pointer-events:none\"":"href=\""+link+"\""} target="_blank" rel="noopener">Comprar</a>
+            ${disabled?'<span class="muted">Agrega un enlace de pago en el código</span>':''}
+          </div>
+        </div>
+      </article>`;
+    }
+
+    function render(list){
+      grid.innerHTML = list.map(card).join('');
+    }
+
+    function search(){
+      const term = q.value.trim().toLowerCase();
+      if(!term){ render(PRODUCTS); return; }
+      const out = PRODUCTS.filter(p =>
+        p.title.toLowerCase().includes(term) ||
+        p.desc.toLowerCase().includes(term)
+      );
+      render(out);
+    }
+
+    q.addEventListener('input', search);
+    clearBtn.addEventListener('click', ()=>{ q.value=''; search(); });
+
+    render(PRODUCTS);
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
