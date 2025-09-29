@@ -4,166 +4,224 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hanzzel Store · NCT</title>
+  <meta name="description" content="Tienda oficial de Hanzzel Corp · Libros NCT, consultoría y más. Sitio 100% estático en GitHub Pages con pagos por PayPal y confirmación por email."/>
   <style>
-    :root { --max: 1100px; }
+    :root{
+      --max:1100px; --bg:#0b1220; --card:#0f172a; --muted:#94a3b8; --ring:#22d3ee; --accent:#22d3ee;
+    }
     *{box-sizing:border-box}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;margin:0;line-height:1.45;color:#111;background:#f7f7f8}
-    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb}
-    .wrap{max-width:var(--max);margin:0 auto;padding:12px 16px}
-    .brand{display:flex;gap:12px;align-items:center}
-    .brand h1{font-size:18px;margin:0}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;background:linear-gradient(180deg,#0b1220 0%,#0b1220 40%,#0e1628 100%);color:#e5e7eb}
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:16px}
+    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(8px);background:rgba(11,18,32,.75);border-bottom:1px solid rgba(255,255,255,.06);z-index:10}
+    .topbar{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:10px;align-items:center}
+    .brand h1{font-size:18px;letter-spacing:.3px;margin:0}
+    nav a{font-size:14px;opacity:.9;text-decoration:none;padding:8px 10px;border-radius:8px}
+    nav a:hover{background:rgba(255,255,255,.06)}
+    .hero{padding:42px 0 22px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .hero h2{font-size:28px;margin:0 0 6px}
+    .hero p{color:var(--muted);margin:0}
+
+    .notice{margin:16px 0;padding:12px 14px;border:1px dashed rgba(34,211,238,.45);background:rgba(34,211,238,.06);color:#cffafe;border-radius:12px}
+
+    .section{padding:28px 0}
+    .section h3{margin:0 0 12px;font-size:18px;letter-spacing:.2px}
+    .muted{color:var(--muted)}
+
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
-    .card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
-    .card img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#eee}
-    .card .in{padding:12px}
-    .title{font-weight:600;margin:0 0 6px}
-    .price{font-weight:700;margin:6px 0}
-    .btn{appearance:none;border:0;border-radius:999px;padding:10px 14px;background:#111;color:#fff;font-weight:600;cursor:pointer}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 30px rgba(0,0,0,.25)}
+    .thumb{width:100%;aspect-ratio:4/3;background:#0b1220;object-fit:cover}
+    .in{padding:14px}
+    .title{margin:0 0 6px;font-weight:700}
+    .desc{margin:0;color:#cbd5e1;font-size:14px}
+    .price{margin:10px 0 0;font-weight:800}
+    .row{display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap}
+    .btn{appearance:none;border:0;border-radius:12px;padding:10px 14px;background:var(--accent);color:#001018;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
     .btn[disabled]{opacity:.6;cursor:not-allowed}
-    .pill{display:inline-flex;gap:6px;align-items:center;font-size:12px;background:#f1f5f9;border:1px solid #e2e8f0;color:#0f172a;padding:4px 8px;border-radius:999px}
-    .topbar{display:flex;justify-content:space-between;align-items:center}
-    .search{width:100%;max-width:420px;display:flex;gap:8px}
-    .search input{flex:1;padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px}
-    footer{margin-top:40px;padding:24px 0;color:#555}
-    .muted{color:#6b7280;font-size:14px}
-    .badges{display:flex;gap:8px;flex-wrap:wrap}
-    .notice{background:#ecfeff;border:1px solid #a5f3fc;color:#155e75;padding:10px 12px;border-radius:10px;margin:12px 0}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,.18);color:#e5e7eb}
+    .pill{display:inline-flex;gap:6px;align-items:center;font-size:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;padding:4px 8px;border-radius:999px}
+
+    .kpis{display:flex;gap:10px;flex-wrap:wrap}
+    .kpis .pill{background:#0b1220}
+
+    footer{margin-top:40px;padding:28px 0;border-top:1px solid rgba(255,255,255,.06);color:#a5b4fc}
+    .footgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .copy{margin-top:12px;color:#94a3b8;font-size:13px}
+
+    .search{width:100%;max-width:460px;display:flex;gap:8px}
+    .search input{flex:1;padding:11px 12px;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:rgba(255,255,255,.06);color:#fff}
+
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+    .step{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px}
+    code.copy{background:rgba(2,6,23,.9);border:1px solid rgba(34,211,238,.3);color:#7dd3fc;padding:4px 6px;border-radius:8px}
+    .soon{opacity:.7}
   </style>
 </head>
 <body>
   <header>
     <div class="wrap topbar">
       <div class="brand">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.77 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.77 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
         <h1>Hanzzel Store</h1>
       </div>
-      <div class="badges">
-        <span class="pill">100% estático · GitHub Pages</span>
-        <span class="pill">Pagos externos seguros</span>
-      </div>
+      <nav>
+        <a href="#libros">Libros</a>
+        <a href="#consultoria">Consultoría</a>
+        <a href="#proximas">Próximas secciones</a>
+        <a href="#comprar">Cómo comprar</a>
+      </nav>
     </div>
   </header>
 
+  <section class="wrap hero">
+    <h2>Conocimiento NCT para construir el futuro</h2>
+    <p class="muted">Libros digitales, consultoría 1:1 y más. Entrega por correo tras confirmar el depósito en PayPal.</p>
+    <div class="kpis" style="margin-top:10px">
+      <span class="pill">100% estático · GitHub Pages</span>
+      <span class="pill">Pagos vía PayPal</span>
+      <span class="pill">Entrega por email</span>
+    </div>
+  </section>
+
   <main class="wrap">
     <div class="notice">
-      Esta tienda funciona sin backend ni hosting pago: se despliega desde un repositorio en GitHub Pages. Los cobros se realizan mediante enlaces de pago (ej.: Mercado Pago, Stripe Payment Links, Lemon Squeezy, Gumroad). No se almacenan tarjetas en este sitio.
+      <strong>IMPORTANTE:</strong> Los productos se envían por correo electrónico a la dirección que indiques al solicitar la compra. El depósito se realiza en PayPal a <code class="copy" id="ppmail">zamorajose03@gmail.com</code>.
+      <button class="btn ghost" id="copyMail" style="margin-left:8px">Copiar email PayPal</button>
     </div>
 
-    <div class="search">
-      <input id="q" placeholder="Buscar productos (p.ej. \"ebook\", \"servicio\")" />
-      <button class="btn" id="clearBtn">Limpiar</button>
+    <div class="section" id="libros">
+      <h3>Libros (5 títulos)</h3>
+      <p class="muted">PDF descargable. Recibirás el archivo por email después de enviar el comprobante.</p>
+      <div class="grid" id="grid-books"></div>
     </div>
 
-    <section style="margin-top:16px">
-      <div class="grid" id="grid"></div>
-    </section>
+    <div class="section" id="consultoria">
+      <h3>Consultoría</h3>
+      <div class="grid" id="grid-consult"></div>
+    </div>
 
-    <section style="margin-top:28px">
-      <h3>¿Cómo se procesa el pago?</h3>
-      <p class="muted">Cada botón <strong>Comprar</strong> abre una URL de cobro externa (ej.: <em>Mercado Pago</em> en ARS o <em>Stripe</em> en USD). Puedes crear un enlace por producto y pegarlo en el catálogo (abajo).</p>
-    </section>
+    <div class="section" id="proximas">
+      <h3>Próximas secciones</h3>
+      <div class="grid" id="grid-soon"></div>
+    </div>
+
+    <div class="section" id="comprar">
+      <h3>Cómo comprar</h3>
+      <div class="steps">
+        <div class="step">
+          <strong>1) Depósito en PayPal</strong>
+          <p class="muted">Enviá el monto a <code class="copy">zamorajose03@gmail.com</code>. En la nota indicá el <em>producto</em> y tu <em>email de entrega</em>.</p>
+        </div>
+        <div class="step">
+          <strong>2) Enviar comprobante</strong>
+          <p class="muted">Presioná <b>Solicitar por email</b> en el producto o escribí a <a href="mailto:zamorajose03@gmail.com">zamorajose03@gmail.com</a> adjuntando el comprobante.</p>
+        </div>
+        <div class="step">
+          <strong>3) Recepción</strong>
+          <p class="muted">Te enviamos el PDF/ZIP al correo indicado. Si surge algo, respondé al mismo hilo y te asistimos.</p>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer>
-    <div class="wrap">
-      <div class="muted">© <span id="year"></span> Hanzzel Corp — Sitio estático. Código en GitHub.</div>
+    <div class="wrap footgrid">
+      <div>
+        <div class="muted">Contacto</div>
+        <div><a href="mailto:zamorajose03@gmail.com">zamorajose03@gmail.com</a></div>
+      </div>
+      <div>
+        <div class="muted">Acerca de</div>
+        <div>Hanzzel Corp — Investigación y desarrollo en NCT, IA y sistemas cuaternarios.</div>
+      </div>
     </div>
+    <div class="wrap copy">© <span id="year"></span> Hanzzel Corp — Sitio estático en GitHub Pages</div>
   </footer>
 
   <script>
-    // 1) Catálogo: edita/duplica los items y pega tus enlaces de pago.
-    //    - mp_link: usa enlaces de pago de Mercado Pago (ej.: https://mpago.li/abcdef)
-    //    - stripe_link: usa Stripe Payment Links (ej.: https://buy.stripe.com/xyz)
-    //    - gumroad/lemon: también sirve un link directo al producto.
-    //    - Si defines varias opciones, se prioriza mp_link, luego stripe_link, luego generic_link.
-
-    const PRODUCTS = [
-      {
-        id: "ebook-nct",
-        title: "Ebook NCT — Cap. 1-8 (PDF)",
-        desc: "Marco matemático NCT: fundamentos, ejemplos y casos de uso.",
-        img: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop",
-        price: 12.99,
-        currency: "USD",
-        mp_link: "", // Pega aquí tu link de Mercado Pago si cobras en ARS
-        stripe_link: "https://buy.stripe.com/test_123456", // Ejemplo
-        generic_link: "" // Gumroad/Lemon/PayPal.Me, etc.
-      },
-      {
-        id: "servicio-consultoria",
-        title: "Consultoría 1h — NCT/IA",
-        desc: "Sesión privada de 60 minutos vía Meet/Telegram. Coordinamos por email.",
-        img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop",
-        price: 45,
-        currency: "USD",
-        mp_link: "",
-        stripe_link: "https://buy.stripe.com/test_654321",
-        generic_link: ""
-      },
-      {
-        id: "merch-campera",
-        title: "Campera Hanzzel · edición limitada",
-        desc: "Diseño minimalista, logo NCT. Entrega en 7-10 días hábiles.",
-        img: "https://images.unsplash.com/photo-1548883354-7622d3d4cc5a?q=80&w=1200&auto=format&fit=crop",
-        price: 79,
-        currency: "USD",
-        mp_link: "",
-        stripe_link: "",
-        generic_link: "https://example.com/pago-campera" // reemplaza por tu pasarela
-      }
+    // ---------- Catálogo ----------
+    const BOOKS = [
+      { id:'nct-cap1', title:'NCT · Capítulo 1 — Origen y axiomas', price:6.99, currency:'USD', img:'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop', desc:'Fundamentos del marco NCT y motivación.' },
+      { id:'nct-cap2', title:'NCT · Capítulo 2 — Matemática base', price:6.99, currency:'USD', img:'https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop', desc:'Operaciones, estructuras y simetrías.' },
+      { id:'nct-cap3', title:'NCT · Capítulo 3 — Dinámica y curvatura', price:7.99, currency:'USD', img:'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop', desc:'Curvibits, acoplamiento y entropía emergente.' },
+      { id:'nct-cap4', title:'NCT · Capítulo 4 — Circuitos y QEO', price:7.99, currency:'USD', img:'https://images.unsplash.com/photo-1534759846116-5797a4d3bb0a?q=80&w=1200&auto=format&fit=crop', desc:'Integración CQ + QAOA. Casos prácticos.' },
+      { id:'nct-cap5', title:'NCT · Capítulo 5 — Implicancias y quinta fuerza', price:8.99, currency:'USD', img:'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop', desc:'Información como energía. Aplicaciones.' }
     ];
 
-    // 2) Renderizado simple + búsqueda
-    const grid = document.getElementById('grid');
-    const q = document.getElementById('q');
-    const clearBtn = document.getElementById('clearBtn');
+    const CONSULT = [
+      { id:'consult-60', title:'Consultoría 1h — NCT/IA', price:45, currency:'USD', img:'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop', desc:'Sesión 1:1 vía Meet/Telegram. Coordinamos por email.' }
+    ];
 
-    function preferredLink(p){
-      return p.mp_link || p.stripe_link || p.generic_link || null;
-    }
+    const SOON = [
+      { id:'curso-nct', title:'Curso NCT (video + notebooks)', price:null, currency:'USD', img:'https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1200&auto=format&fit=crop', desc:'Programa intensivo con prácticas.', soon:true },
+      { id:'merch', title:'Merch oficial Hanzzel', price:null, currency:'USD', img:'https://images.unsplash.com/photo-1548883354-7622d3d4cc5a?q=80&w=1200&auto=format&fit=crop', desc:'Remeras y camperas edición limitada.', soon:true },
+      { id:'bundle-libros', title:'Bundle 5 libros NCT', price:null, currency:'USD', img:'https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1200&auto=format&fit=crop', desc:'Pack con precio preferencial.', soon:true }
+    ];
 
-    function money(n, c){
-      try{
-        return new Intl.NumberFormat('es-AR', { style:'currency', currency: c || 'USD' }).format(n);
-      }catch{ return (c||'USD')+" "+n }
+    // ---------- Utilidades ----------
+    function money(n,c){ try{ return new Intl.NumberFormat('es-AR',{style:'currency',currency:c||'USD'}).format(n);}catch{ return (c||'USD')+" "+n } }
+    function mailto(product){
+      const to = 'zamorajose03@gmail.com';
+      const subject = encodeURIComponent(`Compra: ${product.title} (${product.id})`);
+      const body = encodeURIComponent(`Hola Hanzzel,
+
+Realicé el depósito por PayPal a zamorajose03@gmail.com por el producto:
+- ${product.title} (${product.id})
+
+Monto: ${product.price? money(product.price, product.currency): '—'}
+Email de entrega: 
+Comprobante (pegar enlace si aplica): 
+
+Gracias!`);
+      return `mailto:${to}?subject=${subject}&body=${body}`;
     }
 
     function card(p){
-      const link = preferredLink(p);
-      const disabled = !link;
-      return `<article class="card" data-title="${p.title.toLowerCase()}" data-desc="${p.desc.toLowerCase()}">
-        <img src="${p.img}" alt="${p.title}" loading="lazy">
+      const price = p.price!=null ? `<div class="price">${money(p.price,p.currency)}</div>` : `<div class="price soon">Próximamente</div>`;
+      const primary = `<a class="btn" href="${mailto(p)}">Solicitar por email</a>`;
+      return `<article class="card">
+        <img class="thumb" src="${p.img}" alt="${p.title}" loading="lazy">
         <div class="in">
-          <h3 class="title">${p.title}</h3>
-          <p class="muted">${p.desc}</p>
-          <div class="price">${money(p.price, p.currency)}</div>
-          <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
-            <a class="btn" ${disabled?"aria-disabled=\"true\" style=\"pointer-events:none\"":"href=\""+link+"\""} target="_blank" rel="noopener">Comprar</a>
-            ${disabled?'<span class="muted">Agrega un enlace de pago en el código</span>':''}
+          <h4 class="title">${p.title}</h4>
+          <p class="desc">${p.desc}</p>
+          ${price}
+          <div class="row">
+            ${primary}
+            <button class="btn ghost" data-copy="${p.title}">Copiar título</button>
+            ${p.soon? '<span class="pill">En preparación</span>':''}
           </div>
         </div>
       </article>`;
     }
 
-    function render(list){
-      grid.innerHTML = list.map(card).join('');
-    }
+    function renderList(list, el){ el.innerHTML = list.map(card).join(''); }
 
-    function search(){
-      const term = q.value.trim().toLowerCase();
-      if(!term){ render(PRODUCTS); return; }
-      const out = PRODUCTS.filter(p =>
-        p.title.toLowerCase().includes(term) ||
-        p.desc.toLowerCase().includes(term)
-      );
-      render(out);
-    }
+    renderList(BOOKS, document.getElementById('grid-books'));
+    renderList(CONSULT, document.getElementById('grid-consult'));
+    renderList(SOON, document.getElementById('grid-soon'));
 
-    q.addEventListener('input', search);
-    clearBtn.addEventListener('click', ()=>{ q.value=''; search(); });
-
-    render(PRODUCTS);
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Copiar email
+    document.getElementById('copyMail')?.addEventListener('click', ()=>{
+      const mail = document.getElementById('ppmail').textContent.trim();
+      navigator.clipboard.writeText(mail);
+      alert('Email de PayPal copiado: '+mail);
+    });
+
+    // Delegación para copiar título
+    document.addEventListener('click', (e)=>{
+      const t = e.target;
+      if(t.matches('button[data-copy]')){
+        const txt = t.getAttribute('data-copy');
+        navigator.clipboard.writeText(txt||'');
+        t.textContent = 'Copiado';
+        setTimeout(()=>{ t.textContent = 'Copiar título'; }, 1000);
+      }
+    });
   </script>
 </body>
 </html>
+
+
