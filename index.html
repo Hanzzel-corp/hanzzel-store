@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hanzzel Store · NCT</title>
   <meta name="description" content="Tienda oficial de Hanzzel Corp · Libros NCT, consultoría y más. Sitio 100% estático en GitHub Pages con pagos por PayPal y confirmación por email."/>
+  
+  <!-- 🔹 Metadatos para SEO y redes -->
+  <meta property="og:title" content="Hanzzel Store — Conocimiento NCT para construir el futuro" />
+  <meta property="og:description" content="Libros digitales, consultoría y cursos sobre NCT, IA y Curvibits Cuánticos. Publicaciones oficiales de Hanzzel Corp ∑Δ9." />
+  <meta property="og:image" content="https://hanzzel-corp.github.io/hanzzel-store/preview.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hanzzel-corp.github.io/hanzzel-store/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="author" content="Hanzzel Corp ∑Δ9" />
+
+  <!-- 🔹 Firma simbólica oculta (hash autoría NCT) -->
+  <meta name="nct-signature" content="∑Δ9|NCT-HASH-2025|ZGF0YTpIYW56emVsLUNvcnAtc2VjdXJlLWZpcm1hLW5jdC1hdXRob3JpYQ==" />
+  
   <style>
     :root{
       --max:1100px; --bg:#0b1220; --card:#0f172a; --muted:#94a3b8; --ring:#22d3ee; --accent:#22d3ee;
@@ -47,17 +60,10 @@
 
     footer{margin-top:40px;padding:28px 0;border-top:1px solid rgba(255,255,255,.06);color:#a5b4fc}
     .footgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-    .copy{margin-top:12px;color:#94a3b8;font-size:13px}
-
-    .search{width:100%;max-width:460px;display:flex;gap:8px}
-    .search input{flex:1;padding:11px 12px;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:rgba(255,255,255,.06);color:#fff}
-
-    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-    .step{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px}
-    code.copy{background:rgba(2,6,23,.9);border:1px solid rgba(34,211,238,.3);color:#7dd3fc;padding:4px 6px;border-radius:8px}
-    .soon{opacity:.7}
+    .copy{margin-top:12px;color:#94a3b8;font-size:13px;text-align:center}
   </style>
 </head>
+
 <body>
   <header>
     <div class="wrap topbar">
@@ -84,7 +90,7 @@
     </div>
   </section>
 
-  <main class="wrap">
+  <main class="wrap" id="content">
     <div class="notice">
       <strong>IMPORTANTE:</strong> Los productos se envían por correo electrónico a la dirección que indiques al solicitar la compra. El depósito se realiza en PayPal a <code class="copy" id="ppmail">zamorajose03@gmail.com</code>.
       <button class="btn ghost" id="copyMail" style="margin-left:8px">Copiar email PayPal</button>
@@ -136,18 +142,22 @@
         <div>Hanzzel Corp — Investigación y desarrollo en NCT, IA y sistemas cuaternarios.</div>
       </div>
     </div>
-    <div class="wrap copy">© <span id="year"></span> Hanzzel Corp — Sitio estático en GitHub Pages</div>
+    <div class="wrap copy">
+      © <span id="year"></span> Hanzzel Corp ∑Δ9 — Todos los derechos reservados.<br>
+      Reproducción prohibida sin autorización.  
+      <br><small>Huella simbólica: NCT-Quantum-Auth 3.6.9</small>
+    </div>
   </footer>
 
   <script>
     // ---------- Catálogo ----------
     const BOOKS = [
-  { id:'nct', title:'NCT — Fundamentos', price:12.99, currency:'USD', img:'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop', desc:'Marco NCT: axiomas, estructura y ejemplos.' },
-  { id:'curvibits', title:'Curvibits Cuánticos — Modelo y aplicaciones', price:9.99, currency:'USD', img:'https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop', desc:'Curvatura, acoplamiento y dinámica CQ en práctica.' },
-  { id:'quinta-fuerza', title:'La Quinta Fuerza — Información como energía', price:8.99, currency:'USD', img:'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop', desc:'La información como principio organizador y energético.' },
-  { id:'bot-telegram', title:'Bot de Telegram — Automatización paso a paso', price:6.99, currency:'USD', img:'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop', desc:'Guía práctica para crear y desplegar tu bot.' },
-  { id:'valuacion-sd', title:'Valuación Comercial SD — Método práctico', price:7.99, currency:'USD', img:'https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1200&auto=format&fit=crop', desc:'Framework para estimar valor comercial y escenarios.' }
-];
+      { id:'nct', title:'NCT — Fundamentos', price:12.99, currency:'USD', img:'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop', desc:'Marco NCT: axiomas, estructura y ejemplos.' },
+      { id:'curvibits', title:'Curvibits Cuánticos — Modelo y aplicaciones', price:9.99, currency:'USD', img:'https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop', desc:'Curvatura, acoplamiento y dinámica CQ en práctica.' },
+      { id:'quinta-fuerza', title:'La Quinta Fuerza — Información como energía', price:8.99, currency:'USD', img:'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop', desc:'La información como principio organizador y energético.' },
+      { id:'bot-telegram', title:'Bot de Telegram — Automatización paso a paso', price:6.99, currency:'USD', img:'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop', desc:'Guía práctica para crear y desplegar tu bot.' },
+      { id:'valuacion-sd', title:'Valuación Comercial SD — Método práctico', price:7.99, currency:'USD', img:'https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1200&auto=format&fit=crop', desc:'Framework para estimar valor comercial y escenarios.' }
+    ];
 
     const CONSULT = [
       { id:'consult-60', title:'Consultoría 1h — NCT/IA', price:45, currency:'USD', img:'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop', desc:'Sesión 1:1 vía Meet/Telegram. Coordinamos por email.' }
@@ -159,7 +169,6 @@
       { id:'bundle-libros', title:'Bundle 5 libros NCT', price:null, currency:'USD', img:'https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1200&auto=format&fit=crop', desc:'Pack con precio preferencial.', soon:true }
     ];
 
-    // ---------- Utilidades ----------
     function money(n,c){ try{ return new Intl.NumberFormat('es-AR',{style:'currency',currency:c||'USD'}).format(n);}catch{ return (c||'USD')+" "+n } }
     function mailto(product){
       const to = 'zamorajose03@gmail.com';
@@ -203,14 +212,12 @@ Gracias!`);
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Copiar email
     document.getElementById('copyMail')?.addEventListener('click', ()=>{
       const mail = document.getElementById('ppmail').textContent.trim();
       navigator.clipboard.writeText(mail);
       alert('Email de PayPal copiado: '+mail);
     });
 
-    // Delegación para copiar título
     document.addEventListener('click', (e)=>{
       const t = e.target;
       if(t.matches('button[data-copy]')){
@@ -223,6 +230,8 @@ Gracias!`);
   </script>
 </body>
 </html>
+
+
 
 
 
