@@ -83,6 +83,26 @@
     footer{margin-top:40px;padding:28px 0;border-top:1px solid rgba(255,255,255,.06);color:#a5b4fc}
     .footgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
     .copy{margin-top:12px;color:#94a3b8;font-size:13px;text-align:center}
+    .topbar{gap:14px;flex-wrap:wrap}
+    .topbar nav{display:flex;align-items:center;justify-content:flex-end;gap:4px;flex-wrap:wrap;min-width:0}
+    .topbar nav a{white-space:nowrap}
+    .merch-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px;text-align:center;color:#cffafe;background:radial-gradient(ellipse at 50% 30%,rgba(34,211,238,.20),transparent 55%),linear-gradient(145deg,#111c31,#080e1b)}
+    .merch-placeholder .mark{font-size:12px;letter-spacing:.32em;font-weight:800;color:#67e8f9}
+    .merch-placeholder strong{font-size:clamp(28px,7vw,48px);letter-spacing:.12em;color:#f8fafc}
+    .merch-placeholder small{font-size:10px;letter-spacing:.12em;color:#94a3b8}
+    @media(max-width:680px){
+      .wrap{padding:14px}
+      .topbar{flex-direction:column;align-items:stretch;gap:10px;padding-top:10px;padding-bottom:10px}
+      .brand{justify-content:center}
+      .brand h1{font-size:20px}
+      .topbar nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;width:100%}
+      .topbar nav #langToggle{grid-column:1/-1;width:100%;justify-content:center}
+      .topbar nav a{display:flex;align-items:center;justify-content:center;text-align:center;white-space:normal;min-height:40px;padding:8px 6px;font-size:14px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07)}
+      .topbar nav a:hover{background:rgba(255,255,255,.09)}
+      .hero{padding:26px 0 18px}
+      .hero h2{font-size:24px}
+    }
+    @media(max-width:380px){.topbar nav{grid-template-columns:1fr}.topbar nav #langToggle{grid-column:auto}}
   </style>
 </head>
 
@@ -268,7 +288,7 @@ Gracias!`);
       const price = p.price!=null ? `<div class="price">${money(p.price,p.currency,lang)}</div>` : `<div class="price soon">${lang === 'en' ? 'Coming soon' : 'Próximamente'}</div>`;
       const primary = `<a class="btn" href="${mailto({...p,title})}">${lang === 'en' ? 'Request by email' : 'Solicitar por email'}</a>`;
       return `<article class="card">
-        <img class="thumb" src="${p.img}" alt="${title}" loading="lazy">
+        ${p.id === 'merch' ? `<div class="thumb merch-placeholder" role="img" aria-label="${lang === 'en' ? 'Hanzzel merchandise preview coming soon' : 'Vista previa de merch Hanzzel próximamente'}"><span class="mark">HANZZEL CORP</span><strong>MERCH</strong><small>${lang === 'en' ? 'LIMITED EDITION · COMING SOON' : 'EDICIÓN LIMITADA · PRÓXIMAMENTE'}</small></div>` : `<img class="thumb" src="${p.img}" alt="${title}" loading="lazy">`}
         <div class="in">
           <h4 class="title">${title}</h4>
           <p class="desc">${desc}</p>
