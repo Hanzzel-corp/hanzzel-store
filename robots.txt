@@ -16,14 +16,16 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-# Search and retrieval crawlers are allowed; training crawlers are not authorized here.
+# Google-Extended access is authorized for Gemini-related grounding and model services.
+User-agent: Google-Extended
+Allow: /
+
+# Other training crawlers remain disallowed unless separately authorized.
 User-agent: GPTBot
 Disallow: /
 
 User-agent: ClaudeBot
 Disallow: /
 
-User-agent: Google-Extended
-Disallow: /
 
 Sitemap: https://hanzzel-corp.github.io/hanzzel-store/sitemap.xml
