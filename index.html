@@ -5,11 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hanzzel Store · NCT</title>
   <meta name="description" content="Tienda oficial de Hanzzel Corp · Libros NCT, consultoría y más. Sitio 100% estático en GitHub Pages con pagos por PayPal y confirmación por email."/>
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://hanzzel-corp.github.io/hanzzel-store/">
+  <meta property="og:image" content="https://hanzzel-corp.github.io/og-image.png">
+  <meta property="og:locale" content="es_AR">
+  <meta name="twitter:image" content="https://hanzzel-corp.github.io/og-image.png">
+  <meta name="twitter:title" content="Hanzzel Store | NCT, IA y herramientas prácticas">
+  <meta name="twitter:description" content="Libros digitales y consultoría de Hanzzel Corp. Investigación NCT conectada con herramientas, software y aplicaciones prácticas.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {"@type":"Organization","@id":"https://hanzzel-corp.github.io/#organization","name":"Hanzzel Corp","url":"https://hanzzel-corp.github.io/","sameAs":["https://github.com/Hanzzel-corp","https://orcid.org/0009-0005-3584-1779","https://www.linkedin.com/in/josepablozamora-/"]},
+      {"@type":"WebSite","@id":"https://hanzzel-corp.github.io/hanzzel-store/#website","url":"https://hanzzel-corp.github.io/hanzzel-store/","name":"Hanzzel Store","publisher":{"@id":"https://hanzzel-corp.github.io/#organization"},"inLanguage":["es","en"]},
+      {"@type":"ItemList","name":"Hanzzel Store — Digital books","itemListElement":[
+        {"@type":"ListItem","position":1,"item":{"@type":"Product","name":"NCT — Fundamentos","description":"Marco NCT: axiomas, estructura y ejemplos.","image":"https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop","brand":{"@id":"https://hanzzel-corp.github.io/#organization"},"offers":{"@type":"Offer","price":"12.99","priceCurrency":"USD","url":"https://hanzzel-corp.github.io/hanzzel-store/#libros"}}},
+        {"@type":"ListItem","position":2,"item":{"@type":"Product","name":"Curvibits Cuánticos — Modelo y aplicaciones","description":"Curvatura, acoplamiento y dinámica CQ en práctica.","image":"https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop","brand":{"@id":"https://hanzzel-corp.github.io/#organization"},"offers":{"@type":"Offer","price":"9.99","priceCurrency":"USD","url":"https://hanzzel-corp.github.io/hanzzel-store/#libros"}}},
+        {"@type":"ListItem","position":3,"item":{"@type":"Product","name":"La Quinta Fuerza — Información como energía","description":"La información como principio organizador y energético.","image":"https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop","brand":{"@id":"https://hanzzel-corp.github.io/#organization"},"offers":{"@type":"Offer","price":"8.99","priceCurrency":"USD","url":"https://hanzzel-corp.github.io/hanzzel-store/#libros"}}},
+        {"@type":"ListItem","position":4,"item":{"@type":"Product","name":"Bot de Telegram — Automatización paso a paso","description":"Guía práctica para crear y desplegar tu bot.","image":"https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop","brand":{"@id":"https://hanzzel-corp.github.io/#organization"},"offers":{"@type":"Offer","price":"6.99","priceCurrency":"USD","url":"https://hanzzel-corp.github.io/hanzzel-store/#libros"}}},
+        {"@type":"ListItem","position":5,"item":{"@type":"Product","name":"Valuación Comercial SD — Método práctico","description":"Framework para estimar valor comercial y escenarios.","image":"https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1200&auto=format&fit=crop","brand":{"@id":"https://hanzzel-corp.github.io/#organization"},"offers":{"@type":"Offer","price":"7.99","priceCurrency":"USD","url":"https://hanzzel-corp.github.io/hanzzel-store/#libros"}}}
+      ]}
+    ]
+  }
+  </script>
   
   <!-- 🔹 Metadatos para SEO y redes -->
   <meta property="og:title" content="Hanzzel Store — Conocimiento NCT para construir el futuro" />
   <meta property="og:description" content="Libros digitales, consultoría y cursos sobre NCT, IA y Curvibits Cuánticos. Publicaciones oficiales de Hanzzel Corp ∑Δ9." />
-  <meta property="og:image" content="https://hanzzel-corp.github.io/hanzzel-store/preview.jpg" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://hanzzel-corp.github.io/hanzzel-store/" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -72,60 +94,67 @@
         <h1>Hanzzel Store</h1>
       </div>
       <nav>
-        <a href="#libros">Libros</a>
-        <a href="#consultoria">Consultoría</a>
-        <a href="#proximas">Próximas secciones</a>
-        <a href="#comprar">Cómo comprar</a>
+        <button class="btn ghost" id="langToggle" type="button" aria-label="Cambiar idioma">EN</button>
+        <a href="#libros" data-es="Libros" data-en="Books">Libros</a>
+        <a href="#consultoria" data-es="Consultoría" data-en="Consulting">Consultoría</a>
+        <a href="#proximas" data-es="Próximas secciones" data-en="Coming soon">Próximas secciones</a>
+        <a href="#comprar" data-es="Cómo comprar" data-en="How to buy">Cómo comprar</a>
       </nav>
     </div>
   </header>
 
   <section class="wrap hero">
-    <h2>Conocimiento NCT para construir el futuro</h2>
-    <p class="muted">Libros digitales, consultoría 1:1 y más. Entrega por correo tras confirmar el depósito en PayPal.</p>
+    <h2 data-es="Conocimiento NCT para construir el futuro" data-en="NCT knowledge for practical innovation">Conocimiento NCT para construir el futuro</h2>
+    <p class="muted" data-es="Libros digitales, consultoría 1:1 y más. Entrega por correo tras confirmar el depósito en PayPal." data-en="Digital books, one-to-one consulting and more. Delivery by email after PayPal payment confirmation.">Libros digitales, consultoría 1:1 y más. Entrega por correo tras confirmar el depósito en PayPal.</p>
     <div class="kpis" style="margin-top:10px">
-      <span class="pill">100% estático · GitHub Pages</span>
-      <span class="pill">Pagos vía PayPal</span>
-      <span class="pill">Entrega por email</span>
+      <span class="pill" data-es="100% estático · GitHub Pages" data-en="100% static · GitHub Pages">100% estático · GitHub Pages</span>
+      <span class="pill" data-es="Pagos vía PayPal" data-en="PayPal payments">Pagos vía PayPal</span>
+      <span class="pill" data-es="Entrega por email" data-en="Email delivery">Entrega por email</span>
     </div>
   </section>
 
   <main class="wrap" id="content">
     <div class="notice">
-      <strong>IMPORTANTE:</strong> Los productos se envían por correo electrónico a la dirección que indiques al solicitar la compra. El depósito se realiza en PayPal a <code class="copy" id="ppmail">zamorajose03@gmail.com</code>.
-      <button class="btn ghost" id="copyMail" style="margin-left:8px">Copiar email PayPal</button>
+      <strong data-es="IMPORTANTE:" data-en="IMPORTANT:">IMPORTANTE:</strong> <span data-es="Los productos se envían por correo electrónico a la dirección que indiques al solicitar la compra. El depósito se realiza en PayPal a" data-en="Products are delivered by email to the address you provide with your order. PayPal payment is sent to">Los productos se envían por correo electrónico a la dirección que indiques al solicitar la compra. El depósito se realiza en PayPal a</span> <code class="copy" id="ppmail">zamorajose03@gmail.com</code>.
+      <button class="btn ghost" id="copyMail" style="margin-left:8px" data-es="Copiar email PayPal" data-en="Copy PayPal email">Copiar email PayPal</button>
     </div>
 
     <div class="section" id="libros">
-      <h3>Libros (5 títulos)</h3>
-      <p class="muted">PDF descargable. Recibirás el archivo por email después de enviar el comprobante.</p>
-      <div class="grid" id="grid-books"></div>
+      <h3 data-es="Libros (5 títulos)" data-en="Books (5 titles)">Libros (5 títulos)</h3>
+      <p class="muted" data-es="PDF descargable. Recibirás el archivo por email después de enviar el comprobante." data-en="Downloadable PDF. The file is sent by email after payment confirmation.">PDF descargable. Recibirás el archivo por email después de enviar el comprobante.</p>
+      <div class="grid" id="grid-books">
+      <article class="card"><div class="in"><h4 class="title">NCT — Fundamentos</h4><p class="desc">Marco NCT: axiomas, estructura y ejemplos.</p><div class="price">USD 12.99</div><p class="muted">Libro digital · Solicitud por email</p></div></article>
+      <article class="card"><div class="in"><h4 class="title">Curvibits Cuánticos — Modelo y aplicaciones</h4><p class="desc">Curvatura, acoplamiento y dinámica CQ en práctica.</p><div class="price">USD 9.99</div><p class="muted">Libro digital · Solicitud por email</p></div></article>
+      <article class="card"><div class="in"><h4 class="title">La Quinta Fuerza — Información como energía</h4><p class="desc">La información como principio organizador y energético.</p><div class="price">USD 8.99</div><p class="muted">Libro digital · Solicitud por email</p></div></article>
+      <article class="card"><div class="in"><h4 class="title">Bot de Telegram — Automatización paso a paso</h4><p class="desc">Guía práctica para crear y desplegar tu bot.</p><div class="price">USD 6.99</div><p class="muted">Libro digital · Solicitud por email</p></div></article>
+      <article class="card"><div class="in"><h4 class="title">Valuación Comercial SD — Método práctico</h4><p class="desc">Framework para estimar valor comercial y escenarios.</p><div class="price">USD 7.99</div><p class="muted">Libro digital · Solicitud por email</p></div></article>
+      </div>
     </div>
 
     <div class="section" id="consultoria">
-      <h3>Consultoría</h3>
-      <div class="grid" id="grid-consult"></div>
+      <h3 data-es="Consultoría" data-en="Consulting">Consultoría</h3>
+      <div class="grid" id="grid-consult"><article class="card"><div class="in"><h4 class="title">Consultoría 1h — NCT/IA</h4><p class="desc">Sesión 1:1 vía Meet/Telegram. Coordinamos por email.</p><div class="price">USD 45.00</div></div></article></div>
     </div>
 
     <div class="section" id="proximas">
-      <h3>Próximas secciones</h3>
-      <div class="grid" id="grid-soon"></div>
+      <h3 data-es="Próximas secciones" data-en="Coming soon">Próximas secciones</h3>
+      <div class="grid" id="grid-soon"><article class="card"><div class="in"><h4 class="title">Curso NCT (video + notebooks)</h4><p class="desc">Programa intensivo con prácticas.</p><div class="price">Próximamente</div></div></article><article class="card"><div class="in"><h4 class="title">Merch oficial Hanzzel</h4><p class="desc">Remeras y camperas edición limitada.</p><div class="price">Próximamente</div></div></article><article class="card"><div class="in"><h4 class="title">Bundle 5 libros NCT</h4><p class="desc">Pack con precio preferencial.</p><div class="price">Próximamente</div></div></article></div>
     </div>
 
     <div class="section" id="comprar">
-      <h3>Cómo comprar</h3>
+      <h3 data-es="Cómo comprar" data-en="How to buy">Cómo comprar</h3>
       <div class="steps">
         <div class="step">
-          <strong>1) Depósito en PayPal</strong>
-          <p class="muted">Enviá el monto a <code class="copy">zamorajose03@gmail.com</code>. En la nota indicá el <em>producto</em> y tu <em>email de entrega</em>.</p>
+          <strong data-es="1) Depósito en PayPal" data-en="1) PayPal payment">1) Depósito en PayPal</strong>
+          <p class="muted" data-es="Enviá el monto a zamorajose03@gmail.com. En la nota indicá el producto y tu email de entrega." data-en="Send the amount to zamorajose03@gmail.com. Include the product and delivery email in the payment note.">Enviá el monto a <code class="copy">zamorajose03@gmail.com</code>. En la nota indicá el <em>producto</em> y tu <em>email de entrega</em>.</p>
         </div>
         <div class="step">
-          <strong>2) Enviar comprobante</strong>
-          <p class="muted">Presioná <b>Solicitar por email</b> en el producto o escribí a <a href="mailto:zamorajose03@gmail.com">zamorajose03@gmail.com</a> adjuntando el comprobante.</p>
+          <strong data-es="2) Enviar comprobante" data-en="2) Send payment receipt">2) Enviar comprobante</strong>
+          <p class="muted" data-es="Presioná <b>Solicitar por email</b> en el producto o escribí a <a href='mailto:zamorajose03@gmail.com'>zamorajose03@gmail.com</a> adjuntando el comprobante." data-en="Click <b>Request by email</b> on a product or email <a href='mailto:zamorajose03@gmail.com'>zamorajose03@gmail.com</a> with the payment receipt attached.">Presioná <b>Solicitar por email</b> en el producto o escribí a <a href="mailto:zamorajose03@gmail.com">zamorajose03@gmail.com</a> adjuntando el comprobante.</p>
         </div>
         <div class="step">
-          <strong>3) Recepción</strong>
-          <p class="muted">Te enviamos el PDF/ZIP al correo indicado. Si surge algo, respondé al mismo hilo y te asistimos.</p>
+          <strong data-es="3) Recepción" data-en="3) Delivery">3) Recepción</strong>
+          <p class="muted" data-es="Te enviamos el PDF/ZIP al correo indicado. Si surge algo, respondé al mismo hilo y te asistimos." data-en="We send the PDF/ZIP to the email address provided. Reply to the same thread if you need assistance.">Te enviamos el PDF/ZIP al correo indicado. Si surge algo, respondé al mismo hilo y te asistimos.</p>
         </div>
       </div>
     </div>
@@ -134,7 +163,7 @@
 <!-- 🌌 Sección Cuaternaria -->
 <section style="padding:4rem 1rem; text-align:center; background:linear-gradient(180deg,#0a0f1c 0%,#152032 100%); border-top:1px solid #22d3ee33; border-bottom:1px solid #22d3ee33;">
   <h2 style="font-size:2rem; color:#22d3ee; margin-bottom:1rem;">🌌 Camino Cuaternario — Hanzzel Corp ∑Δ9</h2>
-  <p style="color:#94a3b8; max-width:700px; margin:0 auto 2rem;">
+  <p data-es="Explorá la travesía hacia los <strong>5 millones USD</strong> que impulsarán el desarrollo completo del <strong>OS Cuaternario</strong>, el <strong>NCT Quantum Framework</strong> y la <strong>Inteligencia Artificial Cuántica Híbrida</strong>." data-en="Explore the roadmap toward the <strong>USD 5 million</strong> target intended to support the development of the <strong>Cuaternary OS</strong>, the <strong>NCT Quantum Framework</strong> and <strong>Hybrid Quantum Artificial Intelligence</strong>." style="color:#94a3b8; max-width:700px; margin:0 auto 2rem;">
     Explorá la travesía hacia los <strong>5 millones USD</strong> que impulsarán el desarrollo completo del 
     <strong>OS Cuaternario</strong>, el <strong>NCT Quantum Framework</strong> y la <strong>Inteligencia Artificial Cuántica Híbrida</strong>.
   </p>
@@ -144,7 +173,7 @@
      style="display:inline-block; background:#22d3ee; color:#0a0f1c; font-weight:bold;
             padding:1rem 2.5rem; border-radius:40px; text-decoration:none; 
             font-size:1.1rem; transition:all .3s;">
-     🚀 Ver el Camino Cuaternario
+     🚀 <span data-es="Ver el Camino Cuaternario" data-en="Explore the Cuaternary Path">Ver el Camino Cuaternario</span>
   </a>
 
   <br><br>
@@ -154,28 +183,41 @@
      style="display:inline-block; color:#22d3ee; border:2px solid #22d3ee; 
             border-radius:40px; padding:1rem 2.5rem; text-decoration:none; 
             font-weight:bold; font-size:1rem; transition:all .3s;">
-     📄 Descargar Presentación Hanzzel Corp ∑Δ9
+     📄 <span data-es="Descargar Presentación Hanzzel Corp ∑Δ9" data-en="Download Hanzzel Corp presentation ∑Δ9">Descargar Presentación Hanzzel Corp ∑Δ9</span>
   </a>
 
   <p style="margin-top:2rem; color:#64748b; font-size:0.9rem;">
-    “La información es la quinta fuerza.” — <em>NCT Quantum Framework 2025</em>
+    <span data-es="“La información es la quinta fuerza.” — <em>NCT Quantum Framework 2025</em>" data-en="“Information is the fifth force.” — <em>NCT Quantum Framework 2025</em>">“La información es la quinta fuerza.” — <em>NCT Quantum Framework 2025</em></span>
   </p>
 </section>
   
+<!-- Research and practical work -->
+<section class="wrap section" id="investigacion" style="border-top:1px solid rgba(34,211,238,.2)">
+  <h3 data-es="Investigación, software y documentación" data-en="Research, software and documentation">Investigación, software y documentación</h3>
+  <p class="muted" data-es="La tienda forma parte del ecosistema Hanzzel Corp. Desde aquí podés pasar de los libros y materiales prácticos a los repositorios, registros DOI y perfil de investigación." data-en="The store is part of the Hanzzel Corp ecosystem. From here you can move from books and practical material to repositories, DOI records and the research profile.">La tienda forma parte del ecosistema Hanzzel Corp. Desde aquí podés pasar de los libros y materiales prácticos a los repositorios, registros DOI y perfil de investigación.</p>
+  <div class="grid">
+    <article class="card"><div class="in"><h4 class="title">Hanzzel Corp — Portfolio</h4><p class="desc" data-es="Presentación central, proyectos, perfil y conexiones del ecosistema." data-en="Central profile, projects, professional identity and ecosystem links.">Presentación central, proyectos, perfil y conexiones del ecosistema.</p><a class="btn" href="https://hanzzel-corp.github.io/" data-es="Ver portfolio" data-en="View portfolio">Ver portfolio</a></div></article>
+    <article class="card"><div class="in"><h4 class="title">Blue Arrow</h4><p class="desc" data-es="Framework de orquestación local de IA con intervención humana." data-en="Local AI orchestration framework with human approval.">Framework de orquestación local de IA con intervención humana.</p><a class="btn" href="https://github.com/Hanzzel-corp/blue-arrow" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://doi.org/10.5281/zenodo.20045432" target="_blank" rel="noopener noreferrer">Registro DOI</a></div></article>
+    <article class="card"><div class="in"><h4 class="title">NCT Depth Motif</h4><p class="desc" data-es="Experimento computacional reproducible de análisis RGB-D y motivos de profundidad." data-en="Reproducible computational experiment in RGB-D analysis and depth motifs.">Experimento computacional reproducible de análisis RGB-D y motivos de profundidad.</p><a class="btn" href="https://github.com/Hanzzel-corp/nct-depth-motif" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://doi.org/10.5281/zenodo.20045645" target="_blank" rel="noopener noreferrer">Registro DOI</a></div></article>
+    <article class="card"><div class="in"><h4 class="title">Observatorio Vivo</h4><p class="desc" data-es="Sistema local de inteligencia de tendencias y detección de fenómenos emergentes." data-en="Local trend intelligence and emerging-phenomena detection system.">Sistema local de inteligencia de tendencias y detección de fenómenos emergentes.</p><a class="btn" href="https://github.com/Hanzzel-corp/Observatorio.-Vivo" target="_blank" rel="noopener noreferrer">GitHub</a></div></article>
+    <article class="card"><div class="in"><h4 class="title">SAT Engine v7</h4><p class="desc" data-es="Motor computacional experimental con C++ y orquestación Python." data-en="Experimental computational engine with C++ and Python orchestration.">Motor computacional experimental con C++ y orquestación Python.</p><a class="btn" href="https://github.com/Hanzzel-corp/SAT-Engine-v7" target="_blank" rel="noopener noreferrer">GitHub</a></div></article>
+    <article class="card"><div class="in"><h4 class="title">ORCID</h4><p class="desc" data-es="Identidad pública de investigación y trabajos registrados." data-en="Public research identity and registered works.">Identidad pública de investigación y trabajos registrados.</p><a class="btn" href="https://orcid.org/0009-0005-3584-1779" target="_blank" rel="noopener noreferrer">ORCID</a></div></article>
+  </div>
+</section>
   <footer>
     <div class="wrap footgrid">
       <div>
-        <div class="muted">Contacto</div>
+        <div class="muted" data-es="Contacto" data-en="Contact">Contacto</div>
         <div><a href="mailto:zamorajose03@gmail.com">zamorajose03@gmail.com</a></div>
       </div>
       <div>
-        <div class="muted">Acerca de</div>
-        <div>Hanzzel Corp — Investigación y desarrollo en NCT, IA y sistemas cuaternarios.</div>
+        <div class="muted" data-es="Acerca de" data-en="About">Acerca de</div>
+        <div data-es="Hanzzel Corp — Investigación y desarrollo en NCT, IA y sistemas cuaternarios." data-en="Hanzzel Corp — Research and development in NCT, AI and quaternary systems.">Hanzzel Corp — Investigación y desarrollo en NCT, IA y sistemas cuaternarios.</div>
       </div>
     </div>
     <div class="wrap copy">
-      © <span id="year"></span> Hanzzel Corp ∑Δ9 — Todos los derechos reservados.<br>
-      Reproducción prohibida sin autorización.  
+      <span id="year"></span> Hanzzel Corp ∑Δ9 — <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span><br>
+      <span data-es="Reproducción prohibida sin autorización." data-en="Reproduction prohibited without authorization.">Reproducción prohibida sin autorización.</span>  
       <br><small>Huella simbólica: NCT-Quantum-Auth 3.6.9</small>
     </div>
   </footer>
@@ -183,24 +225,24 @@
   <script>
     // ---------- Catálogo ----------
     const BOOKS = [
-      { id:'nct', title:'NCT — Fundamentos', price:12.99, currency:'USD', img:'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop', desc:'Marco NCT: axiomas, estructura y ejemplos.' },
-      { id:'curvibits', title:'Curvibits Cuánticos — Modelo y aplicaciones', price:9.99, currency:'USD', img:'https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop', desc:'Curvatura, acoplamiento y dinámica CQ en práctica.' },
-      { id:'quinta-fuerza', title:'La Quinta Fuerza — Información como energía', price:8.99, currency:'USD', img:'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop', desc:'La información como principio organizador y energético.' },
-      { id:'bot-telegram', title:'Bot de Telegram — Automatización paso a paso', price:6.99, currency:'USD', img:'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop', desc:'Guía práctica para crear y desplegar tu bot.' },
-      { id:'valuacion-sd', title:'Valuación Comercial SD — Método práctico', price:7.99, currency:'USD', img:'https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1200&auto=format&fit=crop', desc:'Framework para estimar valor comercial y escenarios.' }
+      { id:'nct', title:'NCT — Fundamentos', title_en:'NCT — Fundamentals', price:12.99, currency:'USD', img:'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop', desc:'Marco NCT: axiomas, estructura y ejemplos.', desc_en:'NCT framework: axioms, structure and examples.' },
+      { id:'curvibits', title:'Curvibits Cuánticos — Modelo y aplicaciones', title_en:'Quantum Curvibits — Model and applications', price:9.99, currency:'USD', img:'https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop', desc:'Curvatura, acoplamiento y dinámica CQ en práctica.', desc_en:'Curvature, coupling and CQ dynamics in practice.' },
+      { id:'quinta-fuerza', title:'La Quinta Fuerza — Información como energía', title_en:'The Fifth Force — Information as energy', price:8.99, currency:'USD', img:'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop', desc:'La información como principio organizador y energético.', desc_en:'Information as an organizing and energetic principle.' },
+      { id:'bot-telegram', title:'Bot de Telegram — Automatización paso a paso', title_en:'Telegram Bot — Automation step by step', price:6.99, currency:'USD', img:'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop', desc:'Guía práctica para crear y desplegar tu bot.', desc_en:'Practical guide to building and deploying your bot.' },
+      { id:'valuacion-sd', title:'Valuación Comercial SD — Método práctico', title_en:'SD Commercial Valuation — Practical method', price:7.99, currency:'USD', img:'https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1200&auto=format&fit=crop', desc:'Framework para estimar valor comercial y escenarios.', desc_en:'Framework for estimating commercial value and scenarios.' }
     ];
 
     const CONSULT = [
-      { id:'consult-60', title:'Consultoría 1h — NCT/IA', price:45, currency:'USD', img:'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop', desc:'Sesión 1:1 vía Meet/Telegram. Coordinamos por email.' }
+      { id:'consult-60', title:'Consultoría 1h — NCT/IA', price:45, currency:'USD', img:'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop', desc:'Sesión 1:1 vía Meet/Telegram. Coordinamos por email.', title_en:'1-hour consulting — NCT/AI', desc_en:'One-to-one session via Meet/Telegram. Scheduling by email.' }
     ];
 
     const SOON = [
-      { id:'curso-nct', title:'Curso NCT (video + notebooks)', price:null, currency:'USD', img:'https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1200&auto=format&fit=crop', desc:'Programa intensivo con prácticas.', soon:true },
-      { id:'merch', title:'Merch oficial Hanzzel', price:null, currency:'USD', img:'https://images.unsplash.com/photo-1548883354-7622d3d4cc5a?q=80&w=1200&auto=format&fit=crop', desc:'Remeras y camperas edición limitada.', soon:true },
-      { id:'bundle-libros', title:'Bundle 5 libros NCT', price:null, currency:'USD', img:'https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1200&auto=format&fit=crop', desc:'Pack con precio preferencial.', soon:true }
+      { id:'curso-nct', title:'Curso NCT (video + notebooks)', price:null, currency:'USD', img:'https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1200&auto=format&fit=crop', desc:'Programa intensivo con prácticas.', title_en:'NCT course (video + notebooks)', desc_en:'Intensive program with practical exercises.', soon:true },
+      { id:'merch', title:'Merch oficial Hanzzel', price:null, currency:'USD', img:'https://images.unsplash.com/photo-1548883354-7622d3d4cc5a?q=80&w=1200&auto=format&fit=crop', desc:'Remeras y camperas edición limitada.', title_en:'Official Hanzzel merchandise', desc_en:'Limited-edition T-shirts and jackets.', soon:true },
+      { id:'bundle-libros', title:'Bundle 5 libros NCT', price:null, currency:'USD', img:'https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1200&auto=format&fit=crop', desc:'Pack con precio preferencial.', title_en:'NCT 5-book bundle', desc_en:'Bundle at a preferential price.', soon:true }
     ];
 
-    function money(n,c){ try{ return new Intl.NumberFormat('es-AR',{style:'currency',currency:c||'USD'}).format(n);}catch{ return (c||'USD')+" "+n } }
+    function money(n,c,lang='es'){ try{ return new Intl.NumberFormat(lang==='en'?'en-US':'es-AR',{style:'currency',currency:c||'USD'}).format(n);}catch{ return (c||'USD')+" "+n } }
     function mailto(product){
       const to = 'zamorajose03@gmail.com';
       const subject = encodeURIComponent(`Compra: ${product.title} (${product.id})`);
@@ -217,29 +259,47 @@ Gracias!`);
       return `mailto:${to}?subject=${subject}&body=${body}`;
     }
 
-    function card(p){
-      const price = p.price!=null ? `<div class="price">${money(p.price,p.currency)}</div>` : `<div class="price soon">Próximamente</div>`;
-      const primary = `<a class="btn" href="${mailto(p)}">Solicitar por email</a>`;
+    let currentLang = localStorage.getItem('hanzzel-store-lang') || 'es';
+
+    function card(p, lang){
+      const title = lang === 'en' ? (p.title_en || p.title) : p.title;
+      const desc = lang === 'en' ? (p.desc_en || p.desc) : p.desc;
+      const price = p.price!=null ? `<div class="price">${money(p.price,p.currency,lang)}</div>` : `<div class="price soon">${lang === 'en' ? 'Coming soon' : 'Próximamente'}</div>`;
+      const primary = `<a class="btn" href="${mailto({...p,title})}">${lang === 'en' ? 'Request by email' : 'Solicitar por email'}</a>`;
       return `<article class="card">
-        <img class="thumb" src="${p.img}" alt="${p.title}" loading="lazy">
+        <img class="thumb" src="${p.img}" alt="${title}" loading="lazy">
         <div class="in">
-          <h4 class="title">${p.title}</h4>
-          <p class="desc">${p.desc}</p>
+          <h4 class="title">${title}</h4>
+          <p class="desc">${desc}</p>
           ${price}
-          <div class="row">
-            ${primary}
-            <button class="btn ghost" data-copy="${p.title}">Copiar título</button>
-            ${p.soon? '<span class="pill">En preparación</span>':''}
-          </div>
+          <div class="row">${primary}<button class="btn ghost" data-copy="${title}">${lang === 'en' ? 'Copy title' : 'Copiar título'}</button>${p.soon? `<span class="pill">${lang === 'en' ? 'In preparation' : 'En preparación'}</span>`:''}</div>
         </div>
       </article>`;
     }
 
-    function renderList(list, el){ el.innerHTML = list.map(card).join(''); }
+    function renderList(list, el, lang){ el.innerHTML = list.map(p => card(p,lang)).join(''); }
 
-    renderList(BOOKS, document.getElementById('grid-books'));
-    renderList(CONSULT, document.getElementById('grid-consult'));
-    renderList(SOON, document.getElementById('grid-soon'));
+    function applyLanguage(lang){
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      document.documentElement.setAttribute('data-lang',lang);
+      document.querySelectorAll('[data-es][data-en]').forEach(el => {
+        const value = el.getAttribute('data-' + lang);
+        if(value) el.innerHTML = value;
+      });
+      const toggle = document.getElementById('langToggle');
+      if(toggle){ toggle.textContent = lang === 'es' ? 'EN' : 'ES'; toggle.setAttribute('aria-label',lang === 'es' ? 'Switch to English' : 'Cambiar a español'); }
+      renderList(BOOKS, document.getElementById('grid-books'), lang);
+      renderList(CONSULT, document.getElementById('grid-consult'), lang);
+      renderList(SOON, document.getElementById('grid-soon'), lang);
+    }
+
+    applyLanguage(currentLang);
+    document.getElementById('langToggle')?.addEventListener('click',()=>{
+      const next = currentLang === 'es' ? 'en' : 'es';
+      localStorage.setItem('hanzzel-store-lang',next);
+      applyLanguage(next);
+    });
 
     document.getElementById('year').textContent = new Date().getFullYear();
 

@@ -1,0 +1,32 @@
+# Hanzzel Store — Hanzzel Corp
+
+> Official catalog for digital books and consulting by José Zamora / Hanzzel Corp. The store is a static GitHub Pages site.
+
+## Store
+- Spanish-first catalog: https://hanzzel-corp.github.io/hanzzel-store/
+- Main portfolio and project directory: https://hanzzel-corp.github.io/
+
+## Research identity and evidence
+- GitHub organization: https://github.com/Hanzzel-corp
+- ORCID: https://orcid.org/0009-0005-3584-1779
+- LinkedIn: https://www.linkedin.com/in/josepablozamora-/
+- Blue Arrow repository: https://github.com/Hanzzel-corp/blue-arrow
+- Blue Arrow Zenodo DOI: https://doi.org/10.5281/zenodo.20045432
+- NCT Depth Motif repository: https://github.com/Hanzzel-corp/nct-depth-motif
+- NCT Depth Motif Zenodo DOI: https://doi.org/10.5281/zenodo.20045645
+- Observatorio Vivo repository: https://github.com/Hanzzel-corp/Observatorio.-Vivo
+- SAT Engine v7 repository: https://github.com/Hanzzel-corp/SAT-Engine-v7
+
+## Catalog currently listed on the site
+- NCT — Fundamentos (digital book; USD 12.99)
+- Curvibits Cuánticos — Modelo y aplicaciones (digital book; USD 9.99)
+- La Quinta Fuerza — Información como energía (digital book; USD 8.99)
+- Bot de Telegram — Automatización paso a paso (digital book; USD 6.99)
+- Valuación Comercial SD — Método práctico (digital book; USD 7.99)
+- Consultoría 1h — NCT/IA (USD 45)
+
+## Purchase information
+The page currently instructs customers to request products by email after making a PayPal deposit. Treat the displayed prices and purchase instructions on the live page as authoritative; do not infer instant checkout or automatic delivery.
+
+## Status
+Items in the “Próximas secciones” area are announced as upcoming, not currently available products.
