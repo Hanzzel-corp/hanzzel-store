@@ -116,7 +116,7 @@
 
   <main class="wrap" id="content">
     <div class="notice">
-      <strong>IMPORTANTE:</strong> Los productos se envían por correo electrónico a la dirección que indiques al solicitar la compra. El depósito se realiza en PayPal a <code class="copy" id="ppmail">zamorajose03@gmail.com</code>.
+      <strong data-es="IMPORTANTE:" data-en="IMPORTANT:">IMPORTANTE:</strong> Los productos se envían por correo electrónico a la dirección que indiques al solicitar la compra. El depósito se realiza en PayPal a <code class="copy" id="ppmail">zamorajose03@gmail.com</code>.
       <button class="btn ghost" id="copyMail" style="margin-left:8px" data-es="Copiar email PayPal" data-en="Copy PayPal email">Copiar email PayPal</button>
     </div>
 
@@ -213,7 +213,7 @@
       </div>
       <div>
         <div class="muted">Acerca de</div>
-        <div>Hanzzel Corp — Investigación y desarrollo en NCT, IA y sistemas cuaternarios.</div>
+        <div data-es="Hanzzel Corp — Investigación y desarrollo en NCT, IA y sistemas cuaternarios." data-en="Hanzzel Corp — Research and development in NCT, AI and quaternary systems.">Hanzzel Corp — Investigación y desarrollo en NCT, IA y sistemas cuaternarios.</div>
       </div>
     </div>
     <div class="wrap copy">
@@ -226,21 +226,21 @@
   <script>
     // ---------- Catálogo ----------
     const BOOKS = [
-      { id:'nct', title:'NCT — Fundamentos', price:12.99, currency:'USD', img:'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop', desc:'Marco NCT: axiomas, estructura y ejemplos.' },
-      { id:'curvibits', title:'Curvibits Cuánticos — Modelo y aplicaciones', price:9.99, currency:'USD', img:'https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop', desc:'Curvatura, acoplamiento y dinámica CQ en práctica.' },
-      { id:'quinta-fuerza', title:'La Quinta Fuerza — Información como energía', price:8.99, currency:'USD', img:'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop', desc:'La información como principio organizador y energético.' },
-      { id:'bot-telegram', title:'Bot de Telegram — Automatización paso a paso', price:6.99, currency:'USD', img:'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop', desc:'Guía práctica para crear y desplegar tu bot.' },
-      { id:'valuacion-sd', title:'Valuación Comercial SD — Método práctico', price:7.99, currency:'USD', img:'https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1200&auto=format&fit=crop', desc:'Framework para estimar valor comercial y escenarios.' }
+      { id:'nct', title:'NCT — Fundamentos', title_en:'NCT — Fundamentals', price:12.99, currency:'USD', img:'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop', desc:'Marco NCT: axiomas, estructura y ejemplos.', desc_en:'NCT framework: axioms, structure and examples.' },
+      { id:'curvibits', title:'Curvibits Cuánticos — Modelo y aplicaciones', title_en:'Quantum Curvibits — Model and applications', price:9.99, currency:'USD', img:'https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop', desc:'Curvatura, acoplamiento y dinámica CQ en práctica.', desc_en:'Curvature, coupling and CQ dynamics in practice.' },
+      { id:'quinta-fuerza', title:'La Quinta Fuerza — Información como energía', title_en:'The Fifth Force — Information as energy', price:8.99, currency:'USD', img:'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop', desc:'La información como principio organizador y energético.', desc_en:'Information as an organizing and energetic principle.' },
+      { id:'bot-telegram', title:'Bot de Telegram — Automatización paso a paso', title_en:'Telegram Bot — Automation step by step', price:6.99, currency:'USD', img:'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop', desc:'Guía práctica para crear y desplegar tu bot.', desc_en:'Practical guide to building and deploying your bot.' },
+      { id:'valuacion-sd', title:'Valuación Comercial SD — Método práctico', title_en:'SD Commercial Valuation — Practical method', price:7.99, currency:'USD', img:'https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1200&auto=format&fit=crop', desc:'Framework para estimar valor comercial y escenarios.', desc_en:'Framework for estimating commercial value and scenarios.' }
     ];
 
     const CONSULT = [
-      { id:'consult-60', title:'Consultoría 1h — NCT/IA', price:45, currency:'USD', img:'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop', desc:'Sesión 1:1 vía Meet/Telegram. Coordinamos por email.' }
+      { id:'consult-60', title:'Consultoría 1h — NCT/IA', price:45, currency:'USD', img:'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop', desc:'Sesión 1:1 vía Meet/Telegram. Coordinamos por email.', title_en:'1-hour consulting — NCT/AI', desc_en:'One-to-one session via Meet/Telegram. Scheduling by email.' }
     ];
 
     const SOON = [
-      { id:'curso-nct', title:'Curso NCT (video + notebooks)', price:null, currency:'USD', img:'https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1200&auto=format&fit=crop', desc:'Programa intensivo con prácticas.', soon:true },
-      { id:'merch', title:'Merch oficial Hanzzel', price:null, currency:'USD', img:'https://images.unsplash.com/photo-1548883354-7622d3d4cc5a?q=80&w=1200&auto=format&fit=crop', desc:'Remeras y camperas edición limitada.', soon:true },
-      { id:'bundle-libros', title:'Bundle 5 libros NCT', price:null, currency:'USD', img:'https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1200&auto=format&fit=crop', desc:'Pack con precio preferencial.', soon:true }
+      { id:'curso-nct', title:'Curso NCT (video + notebooks)', price:null, currency:'USD', img:'https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1200&auto=format&fit=crop', desc:'Programa intensivo con prácticas.', title_en:'NCT course (video + notebooks)', desc_en:'Intensive program with practical exercises.', soon:true },
+      { id:'merch', title:'Merch oficial Hanzzel', price:null, currency:'USD', img:'https://images.unsplash.com/photo-1548883354-7622d3d4cc5a?q=80&w=1200&auto=format&fit=crop', desc:'Remeras y camperas edición limitada.', title_en:'Official Hanzzel merchandise', desc_en:'Limited-edition T-shirts and jackets.', soon:true },
+      { id:'bundle-libros', title:'Bundle 5 libros NCT', price:null, currency:'USD', img:'https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1200&auto=format&fit=crop', desc:'Pack con precio preferencial.', title_en:'NCT 5-book bundle', desc_en:'Bundle at a preferential price.', soon:true }
     ];
 
     function money(n,c,lang='es'){ try{ return new Intl.NumberFormat(lang==='en'?'en-US':'es-AR',{style:'currency',currency:c||'USD'}).format(n);}catch{ return (c||'USD')+" "+n } }
