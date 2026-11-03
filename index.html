@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-analytics-site="store">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -36,6 +36,8 @@
   <meta property="og:url" content="https://hanzzel-corp.github.io/hanzzel-store/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="author" content="Hanzzel Corp ∑Δ9" />
+  <script defer src="https://hanzzel-corp.github.io/analytics-config.js"></script>
+  <script defer src="https://hanzzel-corp.github.io/analytics.js"></script>
 
   <!-- 🔹 Firma simbólica oculta (hash autoría NCT) -->
   <meta name="nct-signature" content="∑Δ9|NCT-HASH-2025|ZGF0YTpIYW56emVsLUNvcnAtc2VjdXJlLWZpcm1hLW5jdC1hdXRob3JpYQ==" />
@@ -125,7 +127,7 @@
 
   <section class="wrap hero">
     <h2 data-es="Conocimiento NCT para construir el futuro" data-en="NCT knowledge for practical innovation">Conocimiento NCT para construir el futuro</h2>
-    <p class="muted" data-es="Libros digitales, consultoría 1:1 y más. Entrega por correo tras confirmar el depósito en PayPal." data-en="Digital books, one-to-one consulting and more. Delivery by email after PayPal payment confirmation.">Libros digitales, consultoría 1:1 y más. Entrega por correo tras confirmar el depósito en PayPal.</p>
+    <p class="muted" data-es="Libros digitales y consultoría en NCT, inteligencia artificial y automatización. Solicitudes por email y entrega digital después de confirmar el pago." data-en="Digital books and consulting in NCT, artificial intelligence and automation. Request by email; digital delivery follows payment confirmation.">Libros digitales, consultoría 1:1 y más. Entrega por correo tras confirmar el depósito en PayPal.</p>
     <div class="kpis" style="margin-top:10px">
       <span class="pill" data-es="100% estático · GitHub Pages" data-en="100% static · GitHub Pages">100% estático · GitHub Pages</span>
       <span class="pill" data-es="Pagos vía PayPal" data-en="PayPal payments">Pagos vía PayPal</span>
@@ -141,13 +143,13 @@
 
     <div class="section" id="libros">
       <h3 data-es="Libros (5 títulos)" data-en="Books (5 titles)">Libros (5 títulos)</h3>
-      <p class="muted" data-es="Solicitá el libro por email. El PDF se envía después de confirmar el pago; no hay descargas públicas." data-en="Request the book by email. The PDF is delivered after payment confirmation; no public downloads are available.">PDF descargable. Recibirás el archivo por email después de enviar el comprobante.</p>
+      <p class="muted" data-es="Solicitá el libro por email. El PDF se envía después de confirmar el pago; no hay descargas públicas." data-en="Request the book by email. The PDF is delivered after payment confirmation; no public downloads are available.">Solicitá el libro por email. El PDF se envía después de confirmar el pago; no hay descargas públicas.</p>
       <div class="grid" id="grid-books">
-      <article class="card"><div class="in"><h4 class="title">NCT — Fundamentos</h4><p class="desc">Marco NCT: axiomas, estructura y ejemplos.</p><div class="price">USD 12.99</div><p class="muted">Libro digital · Solicitud por email</p><a class="btn" href="mailto:zamorajose03@gmail.com?subject=Solicitud%20de%20libro%20Hanzzel">Solicitar por email</a></div></article>
-      <article class="card"><div class="in"><h4 class="title">Curvibits Cuánticos — Modelo y aplicaciones</h4><p class="desc">Curvatura, acoplamiento y dinámica CQ en práctica.</p><div class="price">USD 9.99</div><p class="muted">Libro digital · Solicitud por email</p><a class="btn" href="mailto:zamorajose03@gmail.com?subject=Solicitud%20de%20libro%20Hanzzel">Solicitar por email</a></div></article>
-      <article class="card"><div class="in"><h4 class="title">La Quinta Fuerza — Información como energía</h4><p class="desc">La información como principio organizador y energético.</p><div class="price">USD 8.99</div><p class="muted">Libro digital · Solicitud por email</p><a class="btn" href="mailto:zamorajose03@gmail.com?subject=Solicitud%20de%20libro%20Hanzzel">Solicitar por email</a></div></article>
-      <article class="card"><div class="in"><h4 class="title">Bot de Telegram — Automatización paso a paso</h4><p class="desc">Guía práctica para crear y desplegar tu bot.</p><div class="price">USD 6.99</div><p class="muted">Libro digital · Solicitud por email</p><a class="btn" href="mailto:zamorajose03@gmail.com?subject=Solicitud%20de%20libro%20Hanzzel">Solicitar por email</a></div></article>
-      <article class="card"><div class="in"><h4 class="title">Valuación Comercial SD — Método práctico</h4><p class="desc">Framework para estimar valor comercial y escenarios.</p><div class="price">USD 7.99</div><p class="muted">Libro digital · Solicitud por email</p><a class="btn" href="mailto:zamorajose03@gmail.com?subject=Solicitud%20de%20libro%20Hanzzel">Solicitar por email</a></div></article>
+      <article class="card"><div class="in"><h4 class="title">NCT — Fundamentos</h4><p class="desc">Marco NCT: axiomas, estructura y ejemplos.</p><div class="price">USD 12.99</div><p class="muted">Libro digital · Solicitud por email</p><a class="btn" data-umami-event="book-request" data-umami-event-product="NCT — Fundamentos" href="mailto:zamorajose03@gmail.com?subject=Solicitud%20de%20libro%20Hanzzel">Solicitar por email</a></div></article>
+      <article class="card"><div class="in"><h4 class="title">Curvibits Cuánticos — Modelo y aplicaciones</h4><p class="desc">Curvatura, acoplamiento y dinámica CQ en práctica.</p><div class="price">USD 9.99</div><p class="muted">Libro digital · Solicitud por email</p><a class="btn" data-umami-event="book-request" data-umami-event-product="Curvibits Cuánticos" href="mailto:zamorajose03@gmail.com?subject=Solicitud%20de%20libro%20Hanzzel">Solicitar por email</a></div></article>
+      <article class="card"><div class="in"><h4 class="title">La Quinta Fuerza — Información como energía</h4><p class="desc">La información como principio organizador y energético.</p><div class="price">USD 8.99</div><p class="muted">Libro digital · Solicitud por email</p><a class="btn" data-umami-event="book-request" data-umami-event-product="La Quinta Fuerza" href="mailto:zamorajose03@gmail.com?subject=Solicitud%20de%20libro%20Hanzzel">Solicitar por email</a></div></article>
+      <article class="card"><div class="in"><h4 class="title">Bot de Telegram — Automatización paso a paso</h4><p class="desc">Guía práctica para crear y desplegar tu bot.</p><div class="price">USD 6.99</div><p class="muted">Libro digital · Solicitud por email</p><a class="btn" data-umami-event="book-request" data-umami-event-product="Bot de Telegram" href="mailto:zamorajose03@gmail.com?subject=Solicitud%20de%20libro%20Hanzzel">Solicitar por email</a></div></article>
+      <article class="card"><div class="in"><h4 class="title">Valuación Comercial SD — Método práctico</h4><p class="desc">Framework para estimar valor comercial y escenarios.</p><div class="price">USD 7.99</div><p class="muted">Libro digital · Solicitud por email</p><a class="btn" data-umami-event="book-request" data-umami-event-product="Valuación Comercial SD" href="mailto:zamorajose03@gmail.com?subject=Solicitud%20de%20libro%20Hanzzel">Solicitar por email</a></div></article>
       </div>
     </div>
 
