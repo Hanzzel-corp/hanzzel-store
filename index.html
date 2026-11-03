@@ -285,7 +285,7 @@ Gracias!`);
       document.documentElement.setAttribute('data-lang',lang);
       document.querySelectorAll('[data-es][data-en]').forEach(el => {
         const value = el.getAttribute('data-' + lang);
-        if(value) el.innerHTML = (value.includes('<') && value.includes('>')) ? value : value;
+        if(value) el.innerHTML = value;
       });
       const toggle = document.getElementById('langToggle');
       if(toggle){ toggle.textContent = lang === 'es' ? 'EN' : 'ES'; toggle.setAttribute('aria-label',lang === 'es' ? 'Switch to English' : 'Cambiar a español'); }
