@@ -150,7 +150,7 @@
         </div>
         <div class="step">
           <strong data-es="2) Enviar comprobante" data-en="2) Send payment receipt">2) Enviar comprobante</strong>
-          <p class="muted" data-es="Presioná Solicitar por email en el producto o escribí a zamorajose03@gmail.com adjuntando el comprobante." data-en="Click Request by email on a product or email zamorajose03@gmail.com with the payment receipt attached.">Presioná <b>Solicitar por email</b> en el producto o escribí a <a href="mailto:zamorajose03@gmail.com">zamorajose03@gmail.com</a> adjuntando el comprobante.</p>
+          <p class="muted" data-es="Presioná <b>Solicitar por email</b> en el producto o escribí a <a href='mailto:zamorajose03@gmail.com'>zamorajose03@gmail.com</a> adjuntando el comprobante." data-en="Click <b>Request by email</b> on a product or email <a href='mailto:zamorajose03@gmail.com'>zamorajose03@gmail.com</a> with the payment receipt attached.">Presioná <b>Solicitar por email</b> en el producto o escribí a <a href="mailto:zamorajose03@gmail.com">zamorajose03@gmail.com</a> adjuntando el comprobante.</p>
         </div>
         <div class="step">
           <strong data-es="3) Recepción" data-en="3) Delivery">3) Recepción</strong>
@@ -285,7 +285,7 @@ Gracias!`);
       document.documentElement.setAttribute('data-lang',lang);
       document.querySelectorAll('[data-es][data-en]').forEach(el => {
         const value = el.getAttribute('data-' + lang);
-        if(value) el.textContent = value;
+        if(value) el.innerHTML = (value.includes('<') && value.includes('>')) ? value : value;
       });
       const toggle = document.getElementById('langToggle');
       if(toggle){ toggle.textContent = lang === 'es' ? 'EN' : 'ES'; toggle.setAttribute('aria-label',lang === 'es' ? 'Switch to English' : 'Cambiar a español'); }
