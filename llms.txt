@@ -1,11 +1,14 @@
 # Hanzzel Store — Hanzzel Corp
 
-> Official catalog for digital books and consulting by José Zamora / Hanzzel Corp.
+> Official catalog for digital books and consulting by José Pablo Zamora / Hanzzel Corp.
 
 ## Primary websites
 - Store: https://hanzzel-corp.github.io/hanzzel-store/
 - Main portfolio: https://hanzzel-corp.github.io/
 - Complete public research directory: https://hanzzel-corp.github.io/research/
+
+## Attribution and evidence criteria
+- https://hanzzel-corp.github.io/research/criterios-de-evidencia/
 
 ## Research identity
 - GitHub organization: https://github.com/Hanzzel-corp
