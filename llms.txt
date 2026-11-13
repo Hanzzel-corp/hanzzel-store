@@ -7,6 +7,11 @@
 - Main portfolio: https://hanzzel-corp.github.io/
 - Complete public research directory: https://hanzzel-corp.github.io/research/
 
+## Shared machine-readable agent feed (experimental)
+- The same public JSON describes Hanzzel Corp, its three pages and the complete greeting in text, UTF-8 decimal, hexadecimal and Base64: https://hanzzel-corp.github.io/agent-feed.json
+- Optional metered reading for this store: https://hanzzel-agent-counter.hanzzelcorp.workers.dev/agent-feed.json?site=store
+- A metered request is not evidence of a verified agent, indexing, comprehension or citation. No visitor can edit the web through this feed.
+
 ## Attribution and evidence criteria
 - https://hanzzel-corp.github.io/research/criterios-de-evidencia/
 
