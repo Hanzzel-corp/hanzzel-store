@@ -7,6 +7,10 @@
   <meta name="description" content="Catálogo de cinco libros digitales y consultoría individual de Hanzzel Corp. Solicitud por email, pago por PayPal y entrega digital tras confirmar el pago."/>
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://hanzzel-corp.github.io/hanzzel-store/">
+<link rel="alternate" hreflang="es" href="https://hanzzel-corp.github.io/hanzzel-store/">
+<link rel="alternate" hreflang="en" href="https://hanzzel-corp.github.io/hanzzel-store/en/">
+<link rel="alternate" hreflang="x-default" href="https://hanzzel-corp.github.io/hanzzel-store/">
+
   <meta property="og:image" content="https://hanzzel-corp.github.io/og-image.png">
   <meta property="og:locale" content="es_AR">
   <meta name="twitter:image" content="https://hanzzel-corp.github.io/og-image.png">
@@ -248,7 +252,7 @@
         <h1>Hanzzel Store</h1>
       </div>
       <nav>
-        <button class="btn ghost" id="langToggle" type="button" aria-label="Cambiar idioma">EN</button>
+        <a class="btn ghost" id="langToggle" href="/hanzzel-store/en/" hreflang="en" lang="en" aria-label="Switch to English">EN</a>
         <a href="#libros" data-es="Libros" data-en="Books">Libros</a>
         <a href="#consultoria" data-es="Consultoría" data-en="Consulting">Consultoría</a>
         <a href="#proximas" data-es="Próximas secciones" data-en="Coming soon">Próximas secciones</a>
@@ -428,7 +432,7 @@ Gracias.`);
     return `mailto:${to}?subject=${subject}&body=${body}`;
     }
 
-    let currentLang = localStorage.getItem('hanzzel-store-lang') || 'es';
+    let currentLang = window.location.pathname.endsWith('/en/') ? 'en' : 'es';
 
     function card(p, lang){
       const title = lang === 'en' ? (p.title_en || p.title) : p.title;
@@ -459,18 +463,14 @@ Gracias.`);
         if(value) el.innerHTML = value;
       });
       const toggle = document.getElementById('langToggle');
-      if(toggle){ toggle.textContent = lang === 'es' ? 'EN' : 'ES'; toggle.setAttribute('aria-label',lang === 'es' ? 'Switch to English' : 'Cambiar a español'); }
+      if(toggle){ toggle.textContent = lang === 'es' ? 'EN' : 'ES'; toggle.setAttribute('href', lang === 'es' ? '/hanzzel-store/en/' : '/hanzzel-store/'); toggle.setAttribute('aria-label',lang === 'es' ? 'Switch to English' : 'Cambiar a español'); }
       renderList(BOOKS, document.getElementById('grid-books'), lang);
       renderList(CONSULT, document.getElementById('grid-consult'), lang);
       renderList(SOON, document.getElementById('grid-soon'), lang);
     }
 
     applyLanguage(currentLang);
-    document.getElementById('langToggle')?.addEventListener('click',()=>{
-      const next = currentLang === 'es' ? 'en' : 'es';
-      localStorage.setItem('hanzzel-store-lang',next);
-      applyLanguage(next);
-    });
+    // Language selection uses crawlable links to the two static versions.
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
