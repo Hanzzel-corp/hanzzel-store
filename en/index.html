@@ -14,8 +14,8 @@
   <meta property="og:image" content="https://hanzzel-corp.github.io/og-image.png">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:image" content="https://hanzzel-corp.github.io/og-image.png">
-  <meta name="twitter:title" content="Hanzzel Store | Libros digitales y consultoría">
-  <meta name="twitter:description" content="Cinco libros digitales con solicitud por email y entrega tras verificar el pago; consultoría individual coordinada por email.">
+  <meta name="twitter:title" content="Hanzzel Store | Digital books and consulting">
+  <meta name="twitter:description" content="Five digital books with PayPal payment and order receipts by email; individual consulting arranged by email.">
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -145,8 +145,8 @@
     {
       "@type": "Service",
       "@id": "https://hanzzel-corp.github.io/hanzzel-store/en/#consulting-service",
-      "name": "Consultoría 1h — NCT/IA",
-      "description": "Sesión individual de una hora por Meet o Telegram. La disponibilidad y el horario se coordinan por email.",
+      "name": "One-hour consulting — NCT/AI",
+      "description": "One-to-one session via Meet or Telegram, with availability and scheduling arranged by email.",
       "provider": {
         "@id": "https://hanzzel-corp.github.io/#organization"
       },
@@ -155,7 +155,7 @@
         "price": "45.00",
         "priceCurrency": "USD",
         "url": "https://hanzzel-corp.github.io/hanzzel-store/en/#consultoria",
-        "description": "Consultar por email para coordinar disponibilidad; no es un checkout automático."
+        "description": "Contact us by email to arrange availability; this is not an automated checkout."
       }
     }
   ]
@@ -165,7 +165,7 @@
   <meta property="og:title" content="Hanzzel Store — Digital books and consulting" />
   <meta property="og:description" content="Five digital books with PayPal payment and receipt by email; delivery after verification, and individual consulting." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://hanzzel-corp.github.io/hanzzel-store/" />
+  <meta property="og:url" content="https://hanzzel-corp.github.io/hanzzel-store/en/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="author" content="José Pablo Zamora" />
   <!-- 🔹 Firma simbólica oculta (hash autoría NCT) -->
@@ -236,8 +236,8 @@
     @media(max-width:380px){.topbar nav{grid-template-columns:1fr}.topbar nav #langToggle{grid-column:auto}}
   </style>
 <meta property="og:site_name" content="Hanzzel Corp">
-<meta property="og:image:alt" content="Hanzzel Store — catálogo de libros digitales y consultoría de Hanzzel Corp">
-<meta name="twitter:image:alt" content="Hanzzel Store — catálogo de productos digitales">
+<meta property="og:image:alt" content="Hanzzel Store — digital books and consulting from Hanzzel Corp">
+<meta name="twitter:image:alt" content="Hanzzel Store — digital product catalog">
 <link rel="describedby" type="application/json" href="https://hanzzel-agent-counter.hanzzelcorp.workers.dev/agent-feed.json?site=store" title="Metadatos semánticos públicos para agentes">
 </head>
 
@@ -249,7 +249,7 @@
         <h1>Hanzzel Store</h1>
       </div>
       <nav>
-        <a class="btn ghost" id="langToggle" href="/hanzzel-store/" hreflang="es" lang="es" aria-label="Cambiar a español">ES</a>
+        <a class="btn ghost" id="langToggle" href="/hanzzel-store/" hreflang="es" lang="es" aria-label="Switch to Spanish">ES</a>
         <a href="#libros" data-es="Libros" data-en="Books">Books</a>
         <a href="#consultoria" data-es="Consultoría" data-en="Consulting">Consulting</a>
         <a href="#proximas" data-es="Próximas secciones" data-en="Coming soon">Coming soon</a>
@@ -458,7 +458,7 @@ Thank you.`);
         if(value) el.innerHTML = value;
       });
       const toggle = document.getElementById('langToggle');
-      if(toggle){ toggle.textContent = lang === 'es' ? 'EN' : 'ES'; toggle.setAttribute('href', lang === 'es' ? '/hanzzel-store/en/' : '/hanzzel-store/'); toggle.setAttribute('aria-label',lang === 'es' ? 'Switch to English' : 'Cambiar a español'); }
+      if(toggle){ toggle.textContent = lang === 'es' ? 'EN' : 'ES'; toggle.setAttribute('href', lang === 'es' ? '/hanzzel-store/en/' : '/hanzzel-store/'); toggle.setAttribute('aria-label',lang === 'es' ? 'Cambiar a inglés' : 'Switch to Spanish'); }
       renderList(BOOKS, document.getElementById('grid-books'), lang);
       renderList(CONSULT, document.getElementById('grid-consult'), lang);
       renderList(SOON, document.getElementById('grid-soon'), lang);
