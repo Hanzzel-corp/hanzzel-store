@@ -463,7 +463,7 @@ Gracias.`);
         if(value) el.innerHTML = value;
       });
       const toggle = document.getElementById('langToggle');
-      if(toggle){ toggle.textContent = lang === 'es' ? 'EN' : 'ES'; toggle.setAttribute('href', lang === 'es' ? '/hanzzel-store/en/' : '/hanzzel-store/'); toggle.setAttribute('aria-label',lang === 'es' ? 'Switch to English' : 'Cambiar a español'); }
+      if(toggle){ toggle.textContent = lang === 'es' ? 'EN' : 'ES'; toggle.setAttribute('href', lang === 'es' ? '/hanzzel-store/en/' : '/hanzzel-store/'); toggle.setAttribute('aria-label',lang === 'es' ? 'Cambiar a inglés' : 'Switch to Spanish'); }
       renderList(BOOKS, document.getElementById('grid-books'), lang);
       renderList(CONSULT, document.getElementById('grid-consult'), lang);
       renderList(SOON, document.getElementById('grid-soon'), lang);
